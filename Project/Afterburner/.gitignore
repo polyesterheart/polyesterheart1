@@ -1,13 +1,3 @@
-Binaries/Win64/AfterburnerEditor.target
-Binaries/Win64/UnrealEditor.modules
-Binaries/Win64/UnrealEditor-Afterburner.patch_0
-Binaries/Win64/UnrealEditor-Afterburner.patch_0.exp
-Binaries/Win64/UnrealEditor-Afterburner.patch_0.lib
-Binaries/Win64/UnrealEditor-Afterburner.patch_0.pdb
-Binaries/Win64/UnrealEditor-Afterburner.patch_1
-Binaries/Win64/UnrealEditor-Afterburner.patch_1.exp
-Binaries/Win64/UnrealEditor-Afterburner.patch_1.lib
-Binaries/Win64/UnrealEditor-Afterburner.patch_1.pdb
 
 DerivedDataCache/**
 Intermediate/**
