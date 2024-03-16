@@ -5,6 +5,8 @@
 #include "BaseCharacter.generated.h"
 
 
+
+
 UCLASS()
 class AFTERBURNER_API ABaseCharacter : public ACharacter
 {
@@ -16,6 +18,9 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+
+	UFUNCTION(BlueprintCallable,BlueprintImplementableEvent)
+	void CatchUpCameraSpeed();
 
 public:	
 	virtual void Tick(float DeltaTime) override;
@@ -34,5 +39,20 @@ protected:
 	bool bIsMoveForward = false;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input")
 	bool bIsMoveRight = false;
+	
+	//Input blocking
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "InputBlock")
+	bool bIsLeftMovementBlocked = false;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "InputBlock")
+	bool bIsRightMovementBlocked = false;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "InputBlock")
+	bool bIsUpMovementBlocked = false;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "InputBlock")
+	bool bIsDownMovementBlocked = false;
 
+	//Camera Movement
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
+	float CameraSpeed = 1.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
+	bool bIsCameraMoving = false;
 };

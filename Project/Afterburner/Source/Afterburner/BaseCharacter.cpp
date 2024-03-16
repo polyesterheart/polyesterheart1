@@ -17,13 +17,30 @@ void ABaseCharacter::BeginPlay()
 
 void ABaseCharacter::MoveForwardInput(float Value)
 {
+	if (bIsUpMovementBlocked && Value > 0)
+	{
+		Value = 0;
+	}
+	if (bIsDownMovementBlocked && Value < 0)
+	{
+		Value = 0;
+	}
 	AddMovementInput(this->GetActorForwardVector(), Value);
 }
 
 void ABaseCharacter::MoveRightInput(float Value)
 {
+	if (bIsLeftMovementBlocked && Value < 0)
+	{
+		Value = 0;
+	}
+	if (bIsRightMovementBlocked && Value > 0)
+	{
+		Value = 0;
+	}
 	AddMovementInput(this->GetActorRightVector(), Value);
 }
+
 
 void ABaseCharacter::Tick(float DeltaTime)
 {
